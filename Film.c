@@ -8,6 +8,7 @@ int main(void)
    string filmCategorieAdulte[3] = {"Candyman", "Pulp Fiction", "The deep House"};
 
    int ask = get_int("Quel âge avez vous ? ");
+
    for(int i =0; i < 3; i++)
    {
        if(ask < 11)
@@ -32,43 +33,18 @@ int main(void)
               break;
            }
        }
-       else
+       else if(ask >= 17)
 
-       {
+        {
            printf("Est-ce que tu veux voir %s ? [o/n]", filmCategorieAdulte[i]);
-           char yesNo = get_char(" ");
+           char yesNo = get_char("");
            if(yesNo == 'o')
            {
               printf("Bon film!");
               break;
            }
-           else
-           {
-               printf("Voulez-vous voir autre chose ? [o/n]\n");//Donne la possibilité de choisir dans une autre catégorie
-               yesNo = get_char(" ");
-               if(yesNo == 'o')
-               {
+        }
 
-               printf("Est-ce que tu veux voir %s ? [o/n]", filmCategorieAdos[i]);
-                 yesNo = get_char(" ");
-                if(yesNo == 'o')
-                {
-                printf("Bon film!");
-                break;
-                }
-                else
-                {
-                  printf("Est-ce que tu veux voir %s ? [o/n]", filmCategorieEnfant[i]);
-                  yesNo = get_char(" ");
-                 if(yesNo == 'o')
-                {
-                printf("Bon film!");
-                break;
-                }
-                }
-               }
-          }
-      }
   }
 
 }
